@@ -177,3 +177,22 @@ task_tracker.create([{content: "шаг 1", status: "pending"}])
 - Scheduler в headless = внешний cron/launchd с параметром `due:` в task-файле
 
 **См. также:** DP.SOTA.028 (Claude CLI headless hook inheritance), DP.D.083 (Persistent TaskTracker ≠ Ephemeral TodoWrite).
+
+---
+
+## 9. Conformance status — кто реально потребляет контракт
+
+**Найдено пир-сессией (WP-526, 2026-09-07):** контракт специфицирован с 21 мая 2026, но живые ОРЗ-протоколы IWE написаны не против него, а напрямую против инструментов Claude Code — §5 («Переходный период») описывает целевое состояние, которое ещё не наступило.
+
+| Потребитель | Ожидаемое (§5) | Фактическое | Статус |
+|---|---|---|---|
+| `memory/protocol-open.md` | вызов через `task_tracker.create` | прямой `TodoWrite` (строка 23: «Исполнение: пошагово через TodoWrite») | ❌ не потребляет |
+| `memory/protocol-work.md` | вызов через абстрактный API | нет упоминания контракта | ❌ не потребляет |
+| `memory/protocol-close.md` | вызов через `task_tracker.create` | прямой `TodoWrite` (строка 22: «Day/Week Close = через SKILL.md + TodoWrite») | ❌ не потребляет |
+| `CLAUDE.md` / `AGENTS.md` | ссылка на Host Contract при описании агентного ядра | нет упоминания `DP.IWE.011` / `DP.SC.046` | ❌ не потребляет |
+| `DP.IWE.011-adapters/claude-code-adapter.md` | маппинг контракт↔CC | есть (§A-D этого адаптера) | ✅ потребляет (декларативно) |
+| `scripts/headless-runner.sh` | headless-адаптер по контракту | ссылается на `DP.IWE.011-adapter-headless` в комментариях | ✅ потребляет |
+
+**Вывод:** адаптеры (Pack-слой) знают о контракте, протоколы (живой слой, вне Pack) — нет. Контракт написан, но open→work→close пока не написаны *против* него — только адаптер описывает, чем он мог бы быть. Статус `draft` в frontmatter (§v0.1) отражает это точно; поднимать до `active` только после того, как хотя бы один протокол реально вызовет `task_tracker.*`/`scheduler.*` вместо `TodoWrite`/`ScheduleWakeup` напрямую.
+
+**Следующий шаг** (кто и когда — решение пилота, не Pack): переписать `protocol-open.md`/`protocol-work.md`/`protocol-close.md` против абстрактного API. Кандидаты-владители по WP-реестру IWE: spin-off закрытого РП, породившего этот контракт, либо фаза действующего РП по документации платформы.

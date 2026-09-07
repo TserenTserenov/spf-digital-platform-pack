@@ -27,10 +27,10 @@ schema_version: 1
 - Да → **bundle**-смысл.
 - Нет → **coupling**-смысл.
 
-**Применение к IWE:** IWE = portable runtime + Pack + host-адаптеры (см. [DP.IWE.011](../02-domain-entities/DP.IWE.011-host-adapter.md)). Bundle есть (согласованный набор скриптов, хуков, скиллов), coupling с одним LLM-ядром нет (Claude / GPT / локальные модели — через адаптер). Ближе к JVM (portable runtime) + POSIX (контракт хоста), чем к Ubuntu.
+**Применение к IWE:** IWE = portable runtime + Pack + host-адаптеры (см. [DP.IWE.011](DP.IWE.011-runtime-host-contract.md)). Bundle есть (согласованный набор скриптов, хуков, скиллов), coupling с одним LLM-ядром нет (Claude / GPT / локальные модели — через адаптер). Ближе к JVM (portable runtime) + POSIX (контракт хоста), чем к Ubuntu.
 
 **Применение в публичных материалах:** при использовании метафоры «дистрибутив» оговаривать, какой смысл имеется в виду. Без оговорки слушатель достраивает Linux-модель и приписывает coupling-семантику host-агностичному продукту. Случай 22 мая 2026: реакция Андрея на отчёт пилота показала это рассогласование (WP-337).
 
 **Связь:**
-- [DP.IWE.011](../02-domain-entities/DP.IWE.011-host-adapter.md) — host-адаптер как механизм избежания coupling
+- [DP.IWE.011](DP.IWE.011-runtime-host-contract.md) — host-адаптер как механизм избежания coupling
 - L3 `.claude/rules/distinctions.md` — авторская формулировка того же различения (более лаконичная)
