@@ -14,6 +14,9 @@ related:
   uses: [DP.ARCH.001, DP.D.010]
   references: [DP.SOTA.001, DP.SOTA.002, DP.SOTA.011]
 tags: [archgate, architecture, evaluation, gate, method, blocking]
+name_card:
+  governed_value_ref: "FPF A.3.1 (U.Method)"
+  bounded_context_ref: "PACK-digital-platform/pack/digital-platform/01-domain-contract/01A-bounded-context.md"
 ---
 
 # АрхГейт (ArchGate)
