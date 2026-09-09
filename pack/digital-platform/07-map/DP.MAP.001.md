@@ -2,14 +2,14 @@
 id: DP.MAP.001
 name: Pack Navigation Map
 scope: full-pack
-created: 2026-08-09
-last_updated: 2026-08-09
+created: 2026-09-09
+last_updated: 2026-09-09
 generated: true
 ---
 
 # [DP.MAP.001] Pack Navigation Map
 
-> Auto-generated from frontmatter on 2026-08-09. Do not edit manually.
+> Auto-generated from frontmatter on 2026-09-09. Do not edit manually.
 
 ---
 
@@ -22,27 +22,27 @@ generated: true
 | ASSIST (ASSIST) | 1 |
 | Characteristics (CHR) | 1 |
 | CONCEPT (CONCEPT) | 4 |
-| Distinctions (D) | 272 |
+| Distinctions (D) | 278 |
 | ECON (ECON) | 1 |
 | EXOCORTEX (EXOCORTEX) | 1 |
-| Failure Modes (FM) | 315 |
+| Failure Modes (FM) | 331 |
 | IWE (IWE) | 14 |
 | KR (KR) | 3 |
-| Methods (M) | 373 |
-| Maps (MAP) | 2 |
+| Methods (M) | 386 |
+| Maps (MAP) | 3 |
 | METHOD (METHOD) | 177 |
 | NAV (NAV) | 1 |
 | ONT (ONT) | 1 |
 | ORG (ORG) | 1 |
 | ROADMAP (ROADMAP) | 2 |
-| ROLE (ROLE) | 77 |
+| ROLE (ROLE) | 80 |
 | RUNBOOK (RUNBOOK) | 1 |
-| SC (SC) | 163 |
+| SC (SC) | 167 |
 | SoTA Annotations (SOTA) | 35 |
 | SYS (SYS) | 1 |
 | VM (VM) | 1 |
 | Work Products (WP) | 16 |
-| **Total** | **1476** |
+| **Total** | **1519** |
 
 ## Distinctions
 
@@ -320,8 +320,12 @@ generated: true
 | DP.D.287 | Прикладное мастерство = личное, не платформенное | — | draft |
 | DP.D.288 | Быстрое закрытие vs Полное закрытие (сессия/день/неделя/месяц) | — | draft |
 | DP.D.289 | Лестница ИИ-агентов: чат-бот ≠ stateless-агент ≠ stateful-агент с памятью пользователя ≠ агент с непрерывной личностью | Четыре ступени ИИ-агентов различаются техническим носителем, непрерывностью личности и владельцем памяти; ступень не измеряет культуру, мастерство, качество или полномочия. | active |
-| DP.D.290 | Измерительный вопрос ≠ Интервенционный вопрос | Вопрос, питающий gate/метрику, формулируется без пресуппозиций (искажают самоотчёт); интервенционный вопрос (рефлексия собеседника) может использовать пресуппозицию, если её можно отвергнуть без цены. | active |
+| DP.D.290 | Измерительный вопрос ≠ Интервенционный вопрос | — | active |
 | DP.D.291 | Вещь (физический объект) ≠ «вещь» (разговорное «нечто») | В обучающих и методических текстах «вещь» зарезервирована за физическими объектами; для ментального - «пункт/мысль/идея/различение»; в живом чате разговорное употребление допустимо. | active |
+| DP.D.292 | Подписка (Pack-каталог) ≠ Поделиться (обычный репозиторий) | Формальная подписка через каталог (/pack-subscribe, pack-catalog.yaml) применима только к Pack/DPF; обычные репозитории передаются вручную, без каталожного механизма. | active |
+| DP.D.293 | Self-referential verification (сравнение двух подконтрольных себе значений) ≠ third-party verification (сверка с независимым источником) | — | active |
+| DP.D.294 | Карантин недоверенного человеческого события ≠ обнаружение подделки агентского события | Защита от недоверенного, но подлинного источника (карантин, событие видимо с меткой) — не то же самое, что защита от подделки авторства (нужна подпись/аутентификация, а не сверка по строковому совпадению реестра). | active |
+| DP.D.295 | Модуль ≠ Функциональная роль | — | active |
 
 ## Methods
 
@@ -700,6 +704,19 @@ generated: true
 | DP.M.410 | Pull-only паттерн при разделении GitHub-организации: новая org тянет, не получает push | — | draft |
 | DP.M.411 | Override env-var для переиспользования guard в соседнем контексте без смены дефолта | — | draft |
 | DP.M.412 | Состояние перед уведомлением: идемпотентный порядок завершения | — | active |
+| DP.M.413 | Файловая блокировка: освобождение через trap на любом выходе | — | active |
+| DP.M.414 | Общий шлюз координации публикации: fetch + cherry-pick + retry вместо точного совпадения SHA | — | active |
+| DP.M.415 | Захват реального кода возврата вместо подавления ошибки на потенциально штатной коллизии | — | active |
+| DP.M.416 | Семафор карантинится сразу по подтверждённому успеху, не дожидаясь возрастной эвристики sweep'а | — | active |
+| DP.M.417 | Общий resolver для независимо вычисляемой производной идентичности | — | draft |
+| DP.M.418 | Sentinel-значение вместо сравнения по времени в регрессионной проверке | — | draft |
+| DP.M.419 | Разрешение целевой ветки цепочкой fallback вместо хардкода имени | — | draft |
+| DP.M.420 | Файл состояния инцидента: один алерт на сбой, окно повторов, явное сообщение о восстановлении | — | draft |
+| DP.M.421 | Тест на поведенческое отличие именованных режимов: сотри имя ветки — упадёт ли тест? | — | draft |
+| DP.M.422 | Read Model Multi Right Sister Table | — | — |
+| DP.M.423 | Audit Receiver Compensating Control Trust Boundary | — | — |
+| DP.M.424 | Reuse Deployed Idp Over Local Stub | — | — |
+| DP.M.425 | Non Fatal Repo Sync Before Optional Read | — | — |
 
 ## Work Products
 
@@ -1041,6 +1058,22 @@ generated: true
 | DP.FM.381 | Remote-aware guard: git fetch + log HEAD..origin вместо bare git log | — | draft |
 | DP.FM.382 | CI-проверка на своём коммите, не на размере диффа | — | draft |
 | DP.FM.383 | Скрипт-напоминалка + WakeSystem = гонка инициализации | — | draft |
+| DP.FM.384 | Canonical repo path breaks under worktree isolation | — | active |
+| DP.FM.385 | Lock ownership check compares mismatched identity formats | — | active |
+| DP.FM.386 | Переход на фоновый детач тихо теряет таймаут-подстраховку синхронного ожидания | — | active |
+| DP.FM.387 | Опциональный шаг без явного else определяет итоговый exit-код обязательной операции | — | active |
+| DP.FM.388 | Специфичный exit-код проверяется после общей ветки «любой ненулевой = fail» | — | active |
+| DP.FM.389 | Один и тот же коммит-развязка может откатывать одновременно markdown-карточки и исполняемый код | — | active |
+| DP.FM.390 | Блайнд git stash pop орфанного автостэша без построчной проверки deleted: | — | active |
+| DP.FM.391 | SKIP-ветка с exit 0 в обход общего finalize-пути проглатывает ранее записанный в этом же прогоне провал | — | active |
+| DP.FM.392 | Naive text read of serializer-quoted value accumulates escaping on every round-trip | — | draft |
+| DP.FM.393 | Runtime-зеркало неотличимо от исходного репозитория: удаляется чистками, а гонка тиков без лока оставляет его битым навсегда | — | draft |
+| DP.FM.394 | Сквозной побочный эффект (событие журнала) реализован только в одном из нескольких входных путей операции | — | draft |
+| DP.FM.395 | Смена подключения источника — чтение сразу после переключения возвращает данные старого источника | — | active |
+| DP.FM.396 | Аварийный путь уведомления обходит общий слой дедупликации | — | active |
+| DP.FM.397 | Отменённая миграция не долетела до код-читателя — симптом увёл от причины | — | active |
+| DP.FM.398 | Построчный decrypt внутри SQL WHERE и молчаливый возврат шифротекста при недоступном ключе | — | active |
+| DP.FM.399 | Nullable булево поле стороннего API проверено строгим сравнением с False без ветки на None | — | draft |
 
 ## SoTA Annotations
 
@@ -1088,6 +1121,7 @@ generated: true
 |----|------|---------|--------|
 | DP.MAP.001 | Pack Navigation Map | — | — |
 | DP.MAP.002 | IWE Service Catalog | Кросс-системный каталог всех сервисов IWE: сервис → роль → вход → выход → потребитель → исполнитель → триггер | draft |
+| DP.MAP.003 | Guide Pipeline Source Map | Карта источников конвейера генерации руководств и методических материалов (РП521): один механизм отбора, две конфигурации; три подпотока данных; происхождение рубрик; аудит машиночитаемости программ | draft |
 
 ## Domain-Specific Entities
 
@@ -1108,7 +1142,7 @@ generated: true
 | DP.ARCH.002 | Тиры платформы | 4 оси полномочий: T0–T4 (учащийся) + TM1–TM3 (наставник) + TA1–TA4 (администратор) + TD1 (разработчик). Каждый тир — конфигурация среды по 5 измерениям. Оси полномочий ортогональны: один человек = T + TM? + TA? + TD?. Отдельно — 2 оси онбординга (оснащение × развитие), см. §2б. | draft |
 | DP.ARCH.003 | Архитектура Digital Twin — единая точка расчёта и чтения | 8 принципов разделения Calculator / Reader. Единственный калькулятор — R28 Profiler. Интерфейсы — stateless витрины. Каждая цифра трассируется к IND-коду метамодели. | active |
 | DP.ARCH.004 | Архитектура данных Neon (Database-per-BoundedContext) | 12 баз данных Neon по принципу database-per-BoundedContext. Сводная таблица, карта, ERD по каждой БД, связи, потоки, реестр физ.объектов с маркерами О/С/Р/К, revenue-sharing механика (контракты/сплиты/выплаты), points-ledger (event-sourcing) + эмиссионный отчёт, верификация по чеклистам SPF.SPEC.005, замечаниям Андрея Д1-Д12 и категориям WP-257. | active |
-| DP.ARCH.005 | Персона (декларативная модель созидателя) | Персона — distributed-entity, представляющая одного носителя (человека) в IWE. Composition: identity-anchor (Ory subject_id или Pre-Grant claim_token) + declarations (Git PACK-personal/DS-my-strategy/captures) + refs (Neon persona_grants). Писатель деклараций = пользователь (или агент по его поручению с acceptance); identity-anchor издаётся системой регистрации. Заменяет часть монолита ЦД (DP.ARCH.003). v1.1 (2026-05-31): добавлен §0 — Носитель ≠ Персона ≠ Декларация + lifecycle anchor. | active |
+| DP.ARCH.005 | Персона (декларативная модель созидателя) | Персона — distributed-entity, представляющая одного носителя (человека) в IWE. Composition: identity-anchor (Ory subject_id или Pre-Grant claim_token) + declarations (Git PACK-personal/DS-my-strategy/captures) + refs (Neon persona_grants). Писатель деклараций = пользователь (или агент по его поручению с acceptance); identity-anchor издаётся системой регистрации. Заменяет часть монолита ЦД (DP.ARCH.003). v1.1 (2026-05-31): добавлен §0 — Носитель ≠ Персона ≠ Декларация + lifecycle anchor. v1.2 (2026-08-25): неудовлетворённости и граница самооценки квалификации/состояний. | active |
 | DP.ARCH.006 | Память (Observed события + Derived агрегаты) | Память — операционный слой модели пользователя. Писатель = платформа runtime, владелец = Neon. Два под-слоя: Observed (append-only события) + Derived (вычисляемые агрегаты, бывший узкий ЦД). Event Sourcing + CQRS. BKT, HLR, engagement, misconceptions, qualifications. Замещает основную часть монолита DP.ARCH.003. | active |
 | DP.ARCH.007 | Проекция (runtime-компиляция под потребителя) | Проекция — эфемерный runtime-слой: агент на лету собирает из Памяти и Персоны ответ под одного потребителя (LLM-промпт, пользовательский view, nudge). Writer = агент в runtime. Owner = нет (не хранится дольше одного вызова). Заменяет часть монолита ЦД (DP.ARCH.003) — §7 Views + §17 Nudge Engine. | active |
 | DP.ARCH.008 | Enforcement требует наблюдателя вне субъекта | Архитектурный принцип реализации правил агента: правило, которое проверяется самим агентом по памяти, имеет нулевую силу. Наблюдатель должен находиться ВНЕ субъекта, действия которого он контролирует. Шкала сил: memory (0) → hook (средняя) → deterministic generation (максимальная). | active |
@@ -1421,7 +1455,7 @@ generated: true
 | DP.ROLE.055 | Агент поддержки IWE | Носитель ответа на пилотские обращения через Chatwoot CE: маршрутизирует тикеты по теме (баг → разработчик, баллы → диспетчер, руководство → методист), отвечает в Chatwoot, эскалирует в Linear, поддерживает FAQ и Saved Replies. Граница: НЕ диагностирует архитектурные баги (это R6 Кодировщик), НЕ принимает продуктовые решения по фичреквестам (это Стратег R1 + пилот). | draft |
 | DP.ROLE.056 | R32 Мейнтейнер скиллов | Владеет каталогом скиллов IWE. Принимает решения о promote L3→L1, отвечает за обратную совместимость при обновлении L1-скиллов, управляет жизненным циклом скилла (active→experimental→deprecated). | draft |
 | DP.ROLE.057 | R33 Автор скилла | Создаёт новый скилл IWE через конвейер: create-skill.sh → SKILL.md v2 заполнить → validate-skill.sh → smoke-test → propose promote к Мейнтейнеру. Декларирует зависимости, выбирает layer (L1/L3), ссылается на DP.SC. | draft |
-| DP.ROLE.058 | R?? Артефактор-Постановщик | Агентная роль: превращает сырой запрос пользователя в структурированный РП с routing-тегом (task_type + class), готовый к lookup в executor-catalog.yaml Маршрутизатора. | draft |
+| DP.ROLE.058 | R?? Артефактор-Постановщик | Агентная роль: превращает сырой запрос пользователя в структурированный РП с routing-тегом и обязательным handoff для связи со ставкой; не угадывает гипотезу за пилота. | draft |
 | DP.ROLE.059 | R30 Маршрутизатор | Единая точка маршрутизации задач IWE: получает запрос с routing-тегом, выбирает исполнителя из executor-catalog.yaml, не классифицирует самостоятельно — исполняет routing-решения WP Gate или Артефактора. | draft |
 | DP.ROLE.060 | Презентатор | Роль, готовящая и проводящая публичные выступления (доклады, презентации) от имени IWE/MIM. Обеспечивает единый стиль, структурный каркас слайдов и воспроизводимый процесс подготовки. | draft |
 | DP.ROLE.061 | External Session Adapter | Мост между внешним каналом (Telegram) и локальным исполнителем (Claude Code). Поддерживает multi-turn диалог: каждый ход дописывается в SESSION-thread, Egress запускает Claude Code с полным контекстом. Capability scope: код+git, calendar, WP, IWE-знания. Две sub-responsibility: Ingress (cloud) и Egress (local). | draft |
@@ -1430,7 +1464,7 @@ generated: true
 | DP.ROLE.064 | Сторож новых задач (issue watcher) | Специализированная операционная роль: фоновый скрипт, который ежедневно обходит github-репо IWE, выявляет новые задачи (issues), классифицирует важность и шлёт дайджест пилоту в Telegram. Скрипт ≠ агент (фиксированный flow, без LLM). Один исполнитель = одна роль (специализированный агент по имени роли). | draft |
 | DP.ROLE.065 | hermes-proxy-tool | — | draft |
 | DP.ROLE.066 | Плановик (Planner) | Роль операционного планирования (HOW MUCH / WHEN): упаковка приоритетов месяца от Стратега (R1) в рабочие продукты недели с бюджетами, распределение по дням, удержание WIP-лимита. Выделена из R1 Стратега (DP.ROLE.012), который сужается до стратегирования (WHAT/WHY). | draft |
-| DP.ROLE.067 | Онбордер | — | draft |
+| DP.ROLE.067 | Онбордер | Роль ввода: проводит человека через три первые степени квалификационной шкалы — Интересант → Определяющийся → Первокурсник. Отвечает за входную зону (Х2 понимание сообщества, Х3 выбор траектории и переход к оплате), не за весь путь участника. Работает на содержательной оси, не на технической: тиры для неё — средство, а не предмет разговора с человеком. | draft |
 | DP.ROLE.068 | Постановщик задачи IWE | Член команды T4+. Превращает сырую нужду (баг, идея, замечание) в оформленную задачу для конвейера WP-403 с тегом маршрутизации, классом верификации и критерием приёмки. | draft |
 | DP.ROLE.069 | Архитектор конвейера IWE | Член команды T4+. Проходит ArchGate и IntegrationGate для задач конвейера WP-403: обещание, сценарии, роли, границы. Сложные решения — согласование с Ведущим (TD1+TA4). | draft |
 | DP.ROLE.070 | Верификатор конвейера IWE | Член команды T4+ (другой разработчик). Независимая проверка работы Разработчика-исполнителя по эталону перед закрытием РП. Возвращает PASS/FAIL с обоснованием. | draft |
@@ -1455,7 +1489,10 @@ generated: true
 | DP.ROLE.090 | Инженер сопровождения (Sustaining Engineer) | Операционная роль писателя peer-сессии для дефект-кластеров: берёт согласованный план фиксов по пачке issues, выполняет минимальные правки с регресс-тестами, закрывает issues с диагнозом. Специализация Разработчика-исполнителя: вход — дефекты, не постановка фичи. Культурный аналог — sustaining engineering (в отличие от new-development engineering). | active |
 | DP.ROLE.091 | Сторож данных (data-gap watchdog) | Специализированная операционная роль: фоновый скрипт, который периодически проверяет содержимое (не живость процесса) зарегистрированных потоков персональных данных — health.db, WakaTime — на разрыв свежести сверх числового порога, и еженедельно подтверждает на canary-факте, что сам не деградировал в no-op. Скрипт ≠ агент (фиксированный flow, без LLM). | active |
 | DP.ROLE.092 | Аудитор знаний (knowledge-audit watchdog) | Специализированная роль: launchd-таймер запускает Экстрактора (R2, LLM) ежемесячно в режиме knowledge-audit на ротационный scope Pack-репозиториев, доставляет сводку отчёта в Telegram. Таймер сам — скрипт (фиксированное расписание); исполнитель проверки внутри — LLM-агент (R2), не скрипт: структурная/контентная оценка требует суждения, не детерминированной проверки. | draft |
+| DP.ROLE.093 | Декомпозитор источника (source decomposer) | Разбирает пользовательский учебный источник (книга, курс, методика) на карточки CAT-формы с собственной осью областей темы и топологическим порядком подачи. Работает в режиме Б (источник назван) через ручной topic.yaml. Не получает отдельного доступа к файлам пользователя — вызывает библиотечную функцию приёма источника у Разметчика (structurer). Отличие от R29 Декомпозитора (DP.ROLE.053): тот разбирает work product на стадии, этот разбирает учебный источник на карточки знаний. | draft |
 | DP.ROLE.097 | Следователь (Causal Investigator) | Ставит каждому утверждению программы развития рунг лестницы Пёрла, основание и границы использования («что утверждать можно / нельзя»), и отвечает, что нужно для перехода на рунг выше. Аналитическая роль: ничего не рекомендует и ничего не измеряет — размечает доказательность уже измеренного. | draft |
+| DP.ROLE.098 | Секретарь (Secretary) | Читает уже существующие источники (журнал гипотез, журнал событий, портфель РП), доставляет созревшие обязательства с возможностью отмены и отвечает на прямой вопрос пилота о текущем состоянии дел. Не новое хранилище — адресуемый интерфейс поверх раздельных источников. | draft |
+| DP.ROLE.099 | Свидетель стенограммы (Transcript Witness) | Отвечает на один вопрос: что агент написал на самом деле. Читает журнал сессии агента-автора, выдаёт достоверный финальный текст и показывает расхождение с копией, попавшей к читателю через окно чата. Не хранилище и не сторож — свидетель, к которому обращаются, когда чужому тексту нельзя верить на слово. | draft |
 
 ### RUNBOOK
 
@@ -1532,7 +1569,9 @@ generated: true
 | DP.SC.062 | Публикация курируемого манифеста в исследовательский репозиторий iwesys | Ретранслятор канона (DP.ROLE.081) публикует ЯВНО ПЕРЕЧИСЛЕННЫЙ манифест уже-английских файлов из рабочего governance-репозитория (не весь repo/docs, без LLM-перевода на лету) в целевой публичный репозиторий iwesys — третий режим существующей роли, для потребителей без диспозиции 'вся документация репозитория публична' (WP-493 Лаборатория, будущий РП495). | active |
 | DP.SC.063 | Agent connect & select (простое подключение и выбор агента) | Пилот получает: (1) повторяемый чеклист подключения нового файлового агента к IWE за конечное число шагов, без изобретения процесса заново; (2) простой способ решить, какому из уже подключённых агентов отдать конкретную задачу, без нового инструмента поверх существующей инфраструктуры. | draft |
 | DP.SC.064 | nightly-wp-actualization-and-decision-queue | Каждую ночь конвейер сканирует все активные РП и держит карточки актуальными по сопутствующим эффектам; каждое утро пилот получает вопросы-решения парой «вопрос + предложенный ответ», отвечает одним проходом | draft |
+| DP.SC.065 | Декомпозиция прикладных источников | Декомпозитор источника (DP.ROLE.093) разбирает пользовательский учебник/курс/методику на карточки CAT-формы с собственной осью областей темы и топологическим порядком подачи от известного к цели. Режим Б (источник назван пользователем) — ручной MVP через topic.yaml; режим В (источник неизвестен) — отдельный компонент подборщика (Ф7). Каждый факт в руководстве привязан к якорю оригинального источника. Zero-upload: разложение локально, LLM только для финального текстирования (BYOK). | draft |
 | DP.SC.066 | honest-rung-labelling | Каждое утверждение о развитии, доходящее до потребителя (Портной, Навигатор, Стратег, Диагност), несёт рунг лестницы Пёрла, доказательную базу и явное «что утверждать нельзя»; интервенционная формулировка без данных рунга 2 не выпускается | draft |
+| DP.SC.067 | secretary-obligations-and-query | Секретарь читает уже существующие источники (журнал гипотез, журнал событий, портфель РП), доставляет созревшие обязательства с возможностью отмены и отвечает на прямой вопрос пилота о текущем состоянии дел | draft |
 | DP.SC.101 | Вход и онбординг на платформе | Новый участник регистрируется, создаёт ЦД и получает персональный стартовый маршрут — от любопытства к первому действию | draft |
 | DP.SC.102 | Непрерывное обучение | Участник изучает руководства, выполняет задания в рабочей тетради, получает обратную связь от наставника или ИИ | draft |
 | DP.SC.103 | Работа над целевыми системами | Участник применяет методологию FPF к реальным проектам — от учёбы к созиданию | draft |
@@ -1592,7 +1631,7 @@ generated: true
 | DP.SC.157 | Оптимизированный вход в марафон | T1-пользователь получает первое занятие марафона за 4 действия от /start, без ручного ввода команд | draft |
 | DP.SC.158 | Канон tier-сообщений бота | Пользователь T1-T4 видит единообразное сообщение об уровне по шаблону с номером тира и описанием доступного | draft |
 | DP.SC.159 | Маршрутизатор задач IWE | Пилот или агент получает: единственного исполнителя для любой входящей задачи — детерминированного (скрипт) или рассуждающего (LLM/скилл) — в соответствии с routing-тегом, проставленным WP Gate или Артефактором. | draft |
-| DP.SC.160 | Артефактор-Постановщик задач IWE | Пилот или Маршрутизатор получает: из сырого запроса — структурированный РП с routing-тегом (task_type, class, artifact, budget_estimate), готовый к lookup в executor-catalog. | draft |
+| DP.SC.160 | Артефактор-Постановщик задач IWE | Пилот или Маршрутизатор получает: из сырого запроса — структурированный РП с routing-тегом и явной незаполненной связью со ставкой, готовый к WP Gate и lookup в executor-catalog. | draft |
 | DP.SC.161 | Session Memory Injector | Pre-flight сервис: читает iwe_memory.db, выбирает 0–3 релевантных напоминания и инжектирует их в системный промпт исполнителя. При сбое — graceful degradation (пустой контекст), ошибка логируется. | draft |
 | DP.SC.162 | External Session Request | Пилот ведёт полноценную multi-turn рабочую сессию через Telegram — эквивалент окна VS Code, но асинхронно. Поддерживаются: диалог вопрос→ответ→вопрос, работа по РП, операции с календарём, создание РП, поиск по IWE. Все действия трекаются. | draft |
 | DP.SC.163 | Серверные агенты через Gateway (MVP) | Пользователь через Gateway получает результат работы агента (Стратег, Экстрактор) в виде коммита в свой GitHub-репозиторий — без локального CLI, с тем же артефактом, что и через VS Code | draft |
@@ -1631,6 +1670,8 @@ generated: true
 | DP.SC.197 | Наставник (Режим 2) — оперативная помощь в чате | Пилот в любой момент описывает своё текущее состояние своими словами в чате → Наставник (MIM.R.001, Режим 2 — связка Диагност⊗Навигатор⊗Преподаватель-предметник⊗Преподаватель-лидер) ставит диагноз и даёт рекомендацию, опираясь на известное о пилоте, или честно говорит, что знаний не хватает / даёт универсальный ответ | draft |
 | DP.SC.198 | agent-action-reversibility | Пилот может остановить, изменить или отменить любое необратимое/общевидимое действие агента до его совершения; формализует уже действующую практику CLAUDE.md «Executing actions with care» | draft |
 | DP.SC.199 | agent-autonomy-progression | Автономность агента на класс задач растёт по измеримому track record успешных закрытых циклов, не выдаётся одним актом; провал/откат сужает scope автоматически — механизм не спроектирован, только скелет обещания | draft |
+| DP.SC.201 | orz-pipeline | Каждый такт ОРЗ (открытие/закрытие × сессия/день/неделя/месяц) обязан оставить в едином журнале валидную запись о попытке — успех, явный отказ или явную неприменимость — и никогда не пройти молча; персональное руководство и планы дня/недели читают эти записи как источник истины | draft |
+| DP.SC.202 | agent-final-text-authenticity | Финальный текст агента, попавший к пилоту или другому агенту через окно чата, никогда не принимается как источник фактов молча: достоверная копия берётся из журнала сессии, а расхождение между копией из окна и журналом показывается явно, а не остаётся невидимым | draft |
 
 ### SYS
 
@@ -1894,6 +1935,9 @@ generated: true
 - Missing `summary`: DP.D.286 (DP.D.286-no-data-honest-vs-false-unavailable-zero.md)
 - Missing `summary`: DP.D.287 (DP.D.287-applied-mastery-personal-not-platform.md)
 - Missing `summary`: DP.D.288 (DP.D.288-quick-close-vs-full-close.md)
+- Missing `summary`: DP.D.290 (DP.D.290-measurement-question-vs-intervention-question.md)
+- Missing `summary`: DP.D.293 (DP.D.293-self-referential-vs-third-party-verification.md)
+- Missing `summary`: DP.D.295 (DP.D.295-modul-vs-funkcionalnaya-rol.md)
 - Missing `summary`: DP.IWE.003 (DP.IWE.003-gateway-architecture.md)
 - Missing `summary`: DP.IWE.004 (DP.IWE.004-iwe-interfaces.md)
 - Missing `summary`: DP.IWE.005 (DP.IWE.005-local-gateway.md)
@@ -1907,7 +1951,6 @@ generated: true
 - Missing `summary`: DP.IWE.012 (DP.IWE.012-talk-mode.md)
 - Missing `summary`: DP.ROLE.053 (DP.ROLE.053-decomposer.md)
 - Missing `summary`: DP.ROLE.065 (DP.ROLE.065-hermes-proxy-tool.md)
-- Missing `summary`: DP.ROLE.067 (DP.ROLE.067-onboarder.md)
 - Missing `summary`: DP.ROLE.073 (DP.ROLE.073-style-registry-keeper.md)
 - Missing `summary`: DP.ROLE.074 (DP.ROLE.074-style-dispatcher.md)
 - Missing `summary`: DP.ROLE.088 (DP.ROLE.088-router-material-classifier.md)
@@ -2198,6 +2241,19 @@ generated: true
 - Missing `summary`: DP.M.410 (DP.M.410-pull-only-github-org-split.md)
 - Missing `summary`: DP.M.411 (DP.M.411-guard-override-env-var-reuse.md)
 - Missing `summary`: DP.M.412 (DP.M.412-idempotent-completion-state-before-notify.md)
+- Missing `summary`: DP.M.413 (DP.M.413-file-lock-trap-release-on-any-exit.md)
+- Missing `summary`: DP.M.414 (DP.M.414-fetch-cherry-pick-retry-gateway-replaces-sha-match.md)
+- Missing `summary`: DP.M.415 (DP.M.415-capture-real-exit-code-instead-of-silent-true.md)
+- Missing `summary`: DP.M.416 (DP.M.416-semaphore-self-quarantine-on-confirmed-success.md)
+- Missing `summary`: DP.M.417 (DP.M.417-shared-resolver-for-derived-identity.md)
+- Missing `summary`: DP.M.418 (DP.M.418-sentinel-over-wallclock-in-regression-check.md)
+- Missing `summary`: DP.M.419 (DP.M.419-target-branch-resolution-fallback-chain.md)
+- Missing `summary`: DP.M.420 (DP.M.420-incident-state-file-alert-dedup-with-explicit-recovery.md)
+- Missing `summary`: DP.M.421 (DP.M.421-named-modes-behavioral-difference-test.md)
+- Missing `summary`: DP.M.422 (DP.M.422-read-model-multi-right-sister-table.md)
+- Missing `summary`: DP.M.423 (DP.M.423-audit-receiver-compensating-control-trust-boundary.md)
+- Missing `summary`: DP.M.424 (DP.M.424-reuse-deployed-idp-over-local-stub.md)
+- Missing `summary`: DP.M.425 (DP.M.425-non-fatal-repo-sync-before-optional-read.md)
 - Missing `summary`: DP.METHOD.051 (DP.METHOD.051-n8n-builtin-healthz.md)
 - Missing `summary`: DP.METHOD.059 (DP.METHOD.059-bash-32-portability-python3-heredoc.md)
 - Missing `summary`: DP.METHOD.060 (DP.METHOD.060-skill-promotion-l2-to-l1.md)
@@ -2535,6 +2591,22 @@ generated: true
 - Missing `summary`: DP.FM.381 (DP.FM.381-day-close-race-guard-local-log-only-misses-remote.md)
 - Missing `summary`: DP.FM.382 (DP.FM.382-ci-check-must-target-own-commit-not-diff-size.md)
 - Missing `summary`: DP.FM.383 (DP.FM.383-reminder-script-races-wake-system.md)
+- Missing `summary`: DP.FM.384 (DP.FM.384-canonical-repo-path-breaks-under-worktree-isolation.md)
+- Missing `summary`: DP.FM.385 (DP.FM.385-lock-owner-identity-format-mismatch.md)
+- Missing `summary`: DP.FM.386 (DP.FM.386-background-detach-loses-timeout-safety-net.md)
+- Missing `summary`: DP.FM.387 (DP.FM.387-optional-step-without-else-sets-exit-code.md)
+- Missing `summary`: DP.FM.388 (DP.FM.388-specific-exit-code-checked-after-catchall.md)
+- Missing `summary`: DP.FM.389 (DP.FM.389-single-commit-reverts-both-cards-and-code.md)
+- Missing `summary`: DP.FM.390 (DP.FM.390-blind-stash-pop-orphaned-autostash.md)
+- Missing `summary`: DP.FM.391 (DP.FM.391-skip-branch-bypasses-finalize-swallows-recorded-failure.md)
+- Missing `summary`: DP.FM.392 (DP.FM.392-naive-text-read-of-serialized-value-accumulates-quoting.md)
+- Missing `summary`: DP.FM.393 (DP.FM.393-runtime-mirror-indistinguishable-from-source-repo-deleted-by-cleanup.md)
+- Missing `summary`: DP.FM.394 (DP.FM.394-side-effect-logging-only-on-one-of-several-entry-paths.md)
+- Missing `summary`: DP.FM.395 (DP.FM.395-source-switch-stale-read-unfinished-reindex.md)
+- Missing `summary`: DP.FM.396 (DP.FM.396-abort-path-bypasses-notify-dedup-layer.md)
+- Missing `summary`: DP.FM.397 (DP.FM.397-cancelled-migration-reader-not-repointed.md)
+- Missing `summary`: DP.FM.398 (DP.FM.398-decrypt-in-sql-where-silent-ciphertext-passthrough.md)
+- Missing `summary`: DP.FM.399 (DP.FM.399-nullable-boolean-external-api-strict-equality.md)
 - Missing `summary`: DP.SOTA.029 (DP.SOTA.029-ai-era-two-crisis-groups.md)
 - Missing `summary`: DP.SOTA.030 (DP.SOTA.030-eam-agent-manifest-standard.md)
 - Missing `summary`: DP.SOTA.031 (DP.SOTA.031-async-factory-deterministic-pipeline.md)
@@ -2580,12 +2652,12 @@ generated: true
 
 | ID | Days Since Update |
 |----|-------------------|
-| DP.FM.008 | 141 |
-| DP.FM.009 | 121 |
-| DP.FM.011 | 120 |
-| DP.FM.012 | 119 |
-| DP.FM.010 | 114 |
+| DP.FM.008 | 172 |
+| DP.FM.009 | 152 |
+| DP.FM.011 | 151 |
+| DP.FM.012 | 150 |
+| DP.FM.010 | 145 |
 
 ---
 
-*Generated by `scripts/generate-map.py` on 2026-08-09*
+*Generated by `scripts/generate-map.py` on 2026-09-09*
